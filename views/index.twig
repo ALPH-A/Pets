@@ -8,6 +8,14 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -155,6 +163,10 @@ html {
     .registration-form form{
         padding: 50px 20px;
     }
+        .carousel-item>img {
+        max-height: 146px;
+    }
+}
 
     .registration-form .form-icon{
         width: 70px;
@@ -163,6 +175,21 @@ html {
         line-height: 70px;
     }
 
+    
+.parallax {
+  /* The image used */
+  background-image: url("https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+}
 
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
@@ -192,25 +219,47 @@ html {
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
   <!-- Photo grid -->
-  <div class="w3-row">
-    <div class="w3-third">
-      <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.humanesociety.org%2Fresources%2Fhow-make-your-dog-feel-comfortable-new-home&psig=AOvVaw0Yu39WbYmZekuU54jaXw-X&ust=1624656681468000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCLjrqfWbsfECFQAAAAAdAAAAABAD" style="width:100%" onclick="onClick(this)" alt="A boy surrounded by beautiful nature">
-      <img src="/w3images/girl_mountain.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful scenery this sunset">
-      <img src="/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
+  <div class="container">
+   
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/surprises_about_dogs_and_cats_slideshow/1800x1200_surprises_about_dogs_and_cats_slideshow.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="https://i.guim.co.uk/img/media/7d04c4cb7510a4bd9a8bec449f53425aeccee895/289_287_1442_866/master/1442.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=6b7cb2d2ab7847fb0623d2757c1260ba" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="https://blogs.cdc.gov/publichealthmatters/files/2020/05/golden_retiver_cat_cropped.jpg" alt="New york" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1188,w_2121,x_0,y_142/v1554733134/shape/mentalfloss/78996-istock-682216682.jpg?itok=5o35rflV" alt="New york" style="width:100%;">
+      </div>
     </div>
 
-    <div class="w3-third">
-      <img src="/img/gallery-img-01.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-      <img src="/w3images/man_bench.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
-      <img src="/w3images/natureboy.jpg" style="width:100%" onclick="onClick(this)" alt="Nature again.. At its finest!">
-    </div>
-    
-    <div class="w3-third">
-      <img src="/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-      <img src="/w3images/girl_train.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
-      <img src="/w3images/closegirl.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful day!">
-    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+</div>
 
 <div class="w3-container w3-grey w3-center w3-text-light-grey w3-padding-32" id="about">
     <h4><b>I Wanna Adopt a Pet </b></h4>
@@ -345,7 +394,7 @@ html {
      </div> 
     </div>
   </div>
-
+<div class="parallax"></div>
   <!-- Contact section -->
   <div class="container contact-form" id="contact">
             <div class="contact-image">
@@ -379,46 +428,147 @@ html {
 
 
   <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-grey">  
-    <div class="w3-row-padding">
-      <div class="w3-third">
-        <h3>INFO</h3>
-        <p>Our website is made for all you pet lovers to enjoy , spoil your pets , adopt and try to find them.</p>      
-      </div>
-    
-      <div class="w3-third">
-        <h3>BLOG POSTS</h3>
-        <ul class="w3-ul">
-          <li class="w3-padding-16 w3-hover-black">
-            
-            <span class="w3-large">Our new tools</span><br>
-            <span>Check our new brand tools</span>
-          </li>
-          <li class="w3-padding-16 w3-hover-black">
-            
-            <span class="w3-large">Tips</span><br>
-            <span>Read about our tips and tricks to improve your pets life</span>
-          </li> 
-        </ul>
-      </div>
+  
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #929fba"
+          >
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Pet Lovers
+            </h6>
+            <p>
+              Our website is for all you 
+              pet lovers who seek to bring joy to your pets lives
+            </p>
+          </div>
+          <!-- Grid column -->
 
-      <div class="w3-third">
-        <h3>POPULAR TAGS</h3>
-        <p>
-          <span class="w3-tag w3-black w3-margin-bottom">Pets</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dogs</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cats</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Animals</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Birds</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Food</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Paradise</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cute</span> 
-        </p>
-      </div>
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a class="text-white">Pet food</a>
+            </p>
+            <p>
+              <a class="text-white">Toys</a>
+            </p>
+            <p>
+              <a class="text-white">Tips and tricks</a>
+            </p>
+            
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> Tunis, Tunisia</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+            <!-- Facebook -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #3b5998"
+               href="#!"
+               role="button"
+               ><i class="fab fa-facebook-f"></i
+              ></a>
+
+            <!-- Twitter -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #55acee"
+               href="#!"
+               role="button"
+               ><i class="fab fa-twitter"></i
+              ></a>
+
+            <!-- Google -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #dd4b39"
+               href="#!"
+               role="button"
+               ><i class="fab fa-google"></i
+              ></a>
+
+            <!-- Instagram -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #ac2bac"
+               href="#!"
+               role="button"
+               ><i class="fab fa-instagram"></i
+              ></a>
+
+            <!-- Linkedin -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #0082ca"
+               href="#!"
+               role="button"
+               ><i class="fab fa-linkedin-in"></i
+              ></a>
+            <!-- Github -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #333333"
+               href="#!"
+               role="button"
+               ><i class="fab fa-github"></i
+              ></a>
+          </div>
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
     </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2021 Copyright:
+      <a class="text-white" 
+         >PetLovers.com</a
+        >
+    </div>
+    <!-- Copyright -->
   </footer>
+  <!-- Footer -->
+
   
   <div class="w3-black w3-center w3-padding-24">Powered by <p>Pet Lovers</p></div>
   
 
 
 
-<img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg" alt="rocket_contact"/>
 
 
 <!-- End page content -->
@@ -457,6 +607,8 @@ function readURL(input) {
       reader.readAsDataURL(input.files[0]);
   }
 }
+
+
 
 </script>
 
