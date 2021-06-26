@@ -27,7 +27,7 @@ const pool=mysql.createPool({
 
 //LOST AND FOUND QUERY
 //LOST
-app.post('/insertLostpet',function(req,res){
+app.post('/insertLostpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,res){
   pool.query("insert into Lost (name,breed,adress,phoneNumber,message) values (?,?,?,?,?)",
               [req.body.name,req.body.breed,req.body.adress,req.body.phoneNumber,req.body.message],
               function(error,queryResult,fields){
@@ -41,7 +41,7 @@ app.post('/insertLostpet',function(req,res){
   );
   })
 
-app.put('/updateLostpet',function(req,res){
+app.put('/updateLostpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,res){
   pool.query("insert into Lost (name,breed,adress,phoneNumber,message) values (?,?,?,?,?)",
               [req.params.name,req.params.breed,req.body.adress,req.body.phoneNumber,req.body.message],
               function(error,queryResult,fields){
@@ -86,7 +86,7 @@ app.put('/updateLostpet',function(req,res){
   })
 
   //FOUND
-  app.post('/insertFoundpet',function(req,res){
+  app.post('/insertFoundpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,res){
     pool.query("insert into Found (name,breed,adress,phoneNumber,message) values (?,?,?,?,?)",
                 [req.body.name,req.body.breed,req.body.adress,req.body.phoneNumber,req.body.message],
                 function(error,queryResult,fields){
@@ -100,7 +100,7 @@ app.put('/updateLostpet',function(req,res){
     );
     })
   
-  app.put('/updateFoundpet',function(req,res){
+  app.put('/updateFoundpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,res){
     pool.query("insert into Found (name,breed,adress,phoneNumber,message) values (?,?,?,?,?)",
                 [req.params.name,req.params.breed,req.body.adress,req.body.phoneNumber,req.body.message],
                 function(error,queryResult,fields){
