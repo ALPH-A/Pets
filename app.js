@@ -11,6 +11,9 @@ var express = require('express');
 const mysql=require('mysql2');
 var app = express();
 
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 
 
@@ -27,7 +30,8 @@ const pool=mysql.createPool({
 
 //LOST AND FOUND QUERY
 //LOST
-app.post('/insertLostpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,res){
+app.post('/insertLostpet',function(req,res){
+    console.log(req.body);
   pool.query("insert into Lost (name,breed,adress,phoneNumber,message) values (?,?,?,?,?)",
               [req.body.name,req.body.breed,req.body.adress,req.body.phoneNumber,req.body.message],
               function(error,queryResult,fields){
@@ -86,7 +90,7 @@ app.put('/updateLostpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,
   })
 
   //FOUND
-  app.post('/insertFoundpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,res){
+  app.post('/insertFoundpet',function(req,res){
     pool.query("insert into Found (name,breed,adress,phoneNumber,message) values (?,?,?,?,?)",
                 [req.body.name,req.body.breed,req.body.adress,req.body.phoneNumber,req.body.message],
                 function(error,queryResult,fields){
@@ -95,6 +99,7 @@ app.put('/updateLostpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,
                     }
                     else {
                         res.send(queryResult);
+                        
                     }
                 }
     );
