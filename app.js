@@ -148,7 +148,125 @@ app.put('/updateLostpet/:nom/:breed/:adress/:phoneNumber/:message',function(req,
                 }
     );
     })
-  
+    //ADOPT ME! QUERY
+    //i wanna adopt a pet
+    app.post('/addadoptpet',function(req,res){
+        console.log(req.body);
+      pool.query("insert into Adopt (name,adress,petname,phonenumber,message) values (?,?,?,?,?)",
+                  [req.body.name,req.body.adress,req.body.petname,req.body.phonenumber,req.body.message],
+                  function(error,queryResult,fields){
+                      if(error){
+                          res.send("erreur");
+                      }
+                      else {
+                          res.send(queryResult);
+                      }
+                  }
+      );
+      })
+    
+    app.put('/updateadoptpet/:name/:adress/:petname/:phonenumber/:message',function(req,res){
+      pool.query("insert into Adopt (name,adress,petname,phonenumber,message) values (?,?,?,?,?)",
+                  [req.params.name,req.params.adress,req.body.petname,req.body.phoneNumber,req.body.message],
+                  function(error,queryResult,fields){
+                      if(error){
+                          res.send("erreur");
+                      }
+                      else {
+                          res.send(queryResult);
+                      }
+                  }
+      );
+      })
+    
+      app.delete('/deleteadoptpet/:name',function(req,res){
+        pool.query("delete from Adopt  where name ='name'",
+                    [req.params.name],
+                    function(error,queryResult,fields){
+                        if(error){
+                            res.send("erreur");
+                        }
+                        else {
+                            res.send(queryResult);
+                        }
+                    }
+        );
+        })
+      
+      
+      
+      app.get('/getAlladoptpets',function(req,res){
+          pool.query("select * from Adopt  ",
+                  
+                  function(error,queryResult,fields){
+                      if(error){
+                          res.send("erreur");
+                      }
+                      else {
+                          res.send(queryResult);
+                      }
+                  }
+      );
+      })
+      //Pet For Adoption
+      app.post('/addadoptpetproposition',function(req,res){
+        console.log(req.body);
+      pool.query("insert into Adoptprop (name,breed,adress,phonenumber,message) values (?,?,?,?,?)",
+                  [req.body.name,req.body.breed,req.body.adress,req.body.phonenumber,req.body.message],
+                  function(error,queryResult,fields){
+                      if(error){
+                          res.send("erreur");
+                      }
+                      else {
+                          res.send(queryResult);
+                      }
+                  }
+      );
+      })
+    
+    app.put('/updateadoptpetproposition/:name/:breed/:adress/:phonenumber/:message',function(req,res){
+      pool.query("insert into Adoptprop (name,breed,adress,phonenumber,message) values (?,?,?,?,?)",
+                  [req.params.name,req.params.breed,req.body.adress,req.body.phonenumber,req.body.message],
+                  function(error,queryResult,fields){
+                      if(error){
+                          res.send("erreur");
+                      }
+                      else {
+                          res.send(queryResult);
+                      }
+                  }
+      );
+      })
+    
+      app.delete('/deleteadoptpetproposition/:name',function(req,res){
+        pool.query("delete from Adoptprop where name ='name'",
+                    [req.params.name],
+                    function(error,queryResult,fields){
+                        if(error){
+                            res.send("erreur");
+                        }
+                        else {
+                            res.send(queryResult);
+                        }
+                    }
+        );
+        })
+      
+      
+      
+      app.get('/getAllpets',function(req,res){
+          pool.query("select * from Adoptprop ",
+                  
+                  function(error,queryResult,fields){
+                      if(error){
+                          res.send("erreur");
+                      }
+                      else {
+                          res.send(queryResult);
+                      }
+                  }
+      );
+      })
 
     //server listening
   app.listen(3200, function (){
@@ -188,3 +306,4 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+

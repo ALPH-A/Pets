@@ -299,7 +299,7 @@ html {
       
     <div class="registration-form">
     
-       <form>
+       <form action="/addadoptpet" method="POST">
         <h4 class=" text-dark" ><b>I wanna adopt a Pet   </b></h4>
         <p style="color:black"> "Compassion for animals is intimately Connected with goodness of character; and it may be confidently asserted that he who is cruel to animals cannot be a good man" -Schopenhauer </p>
             <div class="form-icon">
@@ -336,34 +336,25 @@ html {
       
       <div class="registration-form">
     
-        <form>
+        <form action="/addadoptpetproposition" method="POST">
         <h4 class=" text-dark" ><b>Pet For Adoption</b></h4>
             <div class="form-icon">
                 <img src="https://cdn.pixabay.com/photo/2017/03/23/09/47/adopt-2167903_1280.png" style="max-width:60%" alt="rocket_contact"/>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="Name" placeholder="Name">
+                <input type="text" class="form-control item" id="Name" placeholder="Name" name="name">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control item" id="Breed" placeholder="Breed">
+                <input type="text" class="form-control item" id="Breed" placeholder="Breed" name="breed">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="Pet name" placeholder="Pet Name">
+                <input type="text" class="form-control item" id="Adress " placeholder="Adress " name="adress">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="Adress " placeholder="Adress ">
+                <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number" name="phonenumber>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number">
-            </div>
-             <div class="w3-section">
-          <label style="color:black">Photo</label>
-          <br>
-          <input type='file' onchange="readURL(this);" />
-          <img style="color:black" id="blah"  />
-        </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" id="Message" placeholder="Message">
+                <input type="text" class="form-control item" id="Message" placeholder="Message" name="message">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account">Send</button>
